@@ -10,19 +10,20 @@
 #                                                                              #
 #******************************************************************************#
 
-NAME = book
+NAME = test
 
 CPP = clang++
 
 FLAGS = -Wall -Wextra -Werror
 
-SRC = ClassBook.cpp \
-		main.cpp
+SRC = Account.class.cpp \
+		tests.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
-	@echo "\033[1;92mbook is created!\033[1;92m"
+	@echo "\033[1;92mtest is created!\033[1;92m"
+
 $(NAME): $(OBJ)
 	@$(CPP) $(FLAGS) -o $(NAME) $(OBJ)
 

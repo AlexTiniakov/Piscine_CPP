@@ -26,10 +26,7 @@ int     main(int ac, char **av)
         {
             i = -1;
             while ((c = av[j][++i]) != '\0')
-            {
-                std::cout << ((c >= 97 && c <= 122) ? (char)(c - ('a' - 'A')) :
-                                                    c);
-            }
+                std::cout << ((c >= 97 && c <= 122) ? (char)(c - ('a' - 'A')) : c);
         }
         std::cout << std::endl;
     }

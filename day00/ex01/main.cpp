@@ -10,7 +10,7 @@
 //                                                                            //
 // ************************************************************************** //
 
-#include "Book.hpp"
+#include "ClassBook.hpp"
 #include <iostream>
 #include <string>
 
