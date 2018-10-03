@@ -5,31 +5,31 @@
 //                                                    +:+ +:+         +:+     //
 //   By: otiniako <otiniako@student.unit.ua>        +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2018/10/02 18:18:38 by otiniako          #+#    #+#             //
-//   Updated: 2018/10/02 18:18:40 by otiniako         ###   ########.fr       //
+//   Created: 2018/10/02 23:22:14 by otiniako          #+#    #+#             //
+//   Updated: 2018/10/02 23:22:15 by otiniako         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#include "Zombie.hpp"
-#include "ZombieEvent.hpp"
+#include "Weapon.hpp"
+#include "HumanA.hpp"
+#include "HumanB.hpp"
 
-int	main()
+int main()
 {
-	std::srand(time(0));
-	ZombieEvent event;
-	Zombie		zombie;
-	Zombie		*zombie1;
-	Zombie		*zombie2;
-	
-	zombie.set_name("Zzzz...");
-	zombie.set_type("BLUE");
-	zombie.announce();
-	event.setZombieType("GREEN");
-	zombie1 = event.newZombie("Zombieeee");
-	zombie1->set_type("RED");
-	zombie1->announce();
-	delete zombie1;
-	zombie2 = event.randomChump();
-	delete zombie2;
-	return (0);
+	{
+		Weapon		club = Weapon("crude spiked club");
+		HumanA		bob("Bob", club);
+		bob.attack();
+		club.setType("some other type of club");
+		bob.attack();
+	}
+
+	{
+		Weapon		club = Weapon("crude spiked club");
+		HumanB		jim("Jim");
+		jim.setWeapon(club);
+		jim.attack();
+		club.setType("some other type of club");
+		jim.attack();
+	}
 }

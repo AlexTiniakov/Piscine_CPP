@@ -16,17 +16,15 @@
 Brain::Brain()
 {
 	std::stringstream	str;
-	
+
 	str << (void *)this;
-	this->adr = str.str();
+	this->_adr = str.str();
 }
 
 Brain::~Brain()
-{
-	;
-}
+{}
 
 std::string Brain::identify()
 {
-	return (this->adr);
+	return (this->_adr);
 }

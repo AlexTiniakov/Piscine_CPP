@@ -13,14 +13,10 @@
 #include "Human.hpp"
 
 Human::Human()
-{
-	;
-}
+{}
 
 Human::~Human()
-{
-	;
-}
+{}
 
 std::string	Human::identify(void)
 {

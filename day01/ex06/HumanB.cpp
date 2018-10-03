@@ -1,36 +1,30 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   Zombie.hpp                                         :+:      :+:    :+:   //
+//   HumanB.cpp                                         :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: otiniako <otiniako@student.unit.ua>        +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2018/10/02 18:16:36 by otiniako          #+#    #+#             //
-//   Updated: 2018/10/02 18:16:36 by otiniako         ###   ########.fr       //
+//   Created: 2018/10/02 23:21:36 by otiniako          #+#    #+#             //
+//   Updated: 2018/10/02 23:21:38 by otiniako         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-# include <string>
+#include "HumanB.hpp"
 
-class Zombie
+HumanB::HumanB(std::string name): _name(name)
+{}
+
+HumanB::~HumanB()
+{}
+
+void	HumanB::attack(void) const
 {
+	std::cout << this->_name << " attacks with his " << this->_club->getType()
+	<< std::endl;
+}
 
-public:
-	Zombie(void);
-	~Zombie(void);
-
-	void		announce(void);
-	void		set_type(std::string type);
-	void		set_name(std::string name);
-
-private:
-	std::string	_name;
-	std::string	_type;
-
-};
-
-
-
-#endif
+void	HumanB::setWeapon(Weapon &club)
+{
+	this->_club = &club;
+}

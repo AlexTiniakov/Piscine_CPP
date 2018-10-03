@@ -1,35 +1,37 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   Zombie.hpp                                         :+:      :+:    :+:   //
+//   Weapon.hpp                                         :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: otiniako <otiniako@student.unit.ua>        +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2018/10/02 18:16:36 by otiniako          #+#    #+#             //
-//   Updated: 2018/10/02 18:16:36 by otiniako         ###   ########.fr       //
+//   Created: 2018/10/02 23:21:05 by otiniako          #+#    #+#             //
+//   Updated: 2018/10/02 23:21:06 by otiniako         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
+# include <iostream>
 # include <string>
 
-class Zombie
+class Weapon
 {
 
 public:
-	Zombie(void);
-	~Zombie(void);
+	Weapon(std::string type);
+	~Weapon(void);
 
-	void		announce(void);
-	void		set_type(std::string type);
-	void		set_name(std::string name);
+	std::string	const & getType(void) const;
+	void		setType(std::string type);
 
 private:
-	std::string	_name;
-	std::string	_type;
+	std::string _type;
+	
+	Weapon(void);
 
 };
+
 
 
 

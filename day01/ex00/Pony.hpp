@@ -14,17 +14,15 @@
 # define PONY_HPP
 # include <string>
 
-
 class Pony
 {
 
 public:
-	std::string	name;
-
     Pony(std::string name);
     ~Pony(void);
 
 private:
+	std::string	_name;
 	Pony(void);
 
 };

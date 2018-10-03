@@ -24,8 +24,8 @@ ZombieHorde::ZombieHorde(int N)
 		this->_zombies = new Zombie[N];
 		for (int i = 0; i < N; i++)
 		{
-			this->_zombies[i].name = names[rand() % 5];
-			this->_zombies[i].type = types[rand() % 3];
+			this->_zombies[i].set_name(names[rand() % 5]);
+			this->_zombies[i].set_type(types[rand() % 3]);
 		}
 	}
 }

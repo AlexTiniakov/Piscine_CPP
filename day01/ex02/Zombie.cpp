@@ -13,24 +13,27 @@
 #include "Zombie.hpp"
 #include <iostream>
 
-Zombie::Zombie(std::string name)
+Zombie::Zombie()
 {
-	this->name = name;
-	this->type = "NONE";
+	this->_name = "NONE";
+	this->_type = "NONE";
 }
 
 Zombie::~Zombie()
-{
-	;
-}
+{}
 
-void Zombie::announce()
+void	Zombie::announce()
 {
-	std::cout << "<" << this->name << " (" << this->type
+	std::cout << "<" << this->_name << " (" << this->_type
 	<< ")> Braiiiiiiinnnssss..." << std::endl;
 }
 
-Zombie::Zombie()
+void	Zombie::set_type(std::string type)
 {
-	;
+	this->_type = type;
+}
+
+void	Zombie::set_name(std::string name)
+{
+	this->_name = name;
 }

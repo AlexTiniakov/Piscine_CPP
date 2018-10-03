@@ -15,17 +15,25 @@
 
 Zombie::Zombie()
 {
-	this->name = "NONE";
-	this->type = "NONE";
+	this->_name = "NONE";
+	this->_type = "NONE";
 }
 
 Zombie::~Zombie()
+{}
+
+void	Zombie::announce()
 {
-	;
+	std::cout << "<" << this->_name << " (" << this->_type
+	<< ")> Braiiiiiiinnnssss..." << std::endl;
 }
 
-void Zombie::announce()
+void	Zombie::set_type(std::string type)
 {
-	std::cout << "<" << this->name << " (" << this->type
-	<< ")> Braiiiiiiinnnssss..." << std::endl;
+	this->_type = type;
+}
+
+void	Zombie::set_name(std::string name)
+{
+	this->_name = name;
 }

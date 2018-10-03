@@ -1,36 +1,36 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   Zombie.hpp                                         :+:      :+:    :+:   //
+//   HumanA.hpp                                         :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: otiniako <otiniako@student.unit.ua>        +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2018/10/02 18:16:36 by otiniako          #+#    #+#             //
-//   Updated: 2018/10/02 18:16:36 by otiniako         ###   ########.fr       //
+//   Created: 2018/10/02 23:21:26 by otiniako          #+#    #+#             //
+//   Updated: 2018/10/02 23:21:26 by otiniako         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
+# include "Weapon.hpp"
+# include <iostream>
 # include <string>
 
-class Zombie
+
+class HumanA
 {
+private:
+	Weapon		&_club;
+	std::string	_name;
+
+	HumanA(void);
 
 public:
-	Zombie(void);
-	~Zombie(void);
-
-	void		announce(void);
-	void		set_type(std::string type);
-	void		set_name(std::string name);
-
-private:
-	std::string	_name;
-	std::string	_type;
-
+	HumanA(std::string name, Weapon &club);
+	~HumanA(void);
+	
+	void	attack(void) const;
+	
 };
-
-
 
 #endif

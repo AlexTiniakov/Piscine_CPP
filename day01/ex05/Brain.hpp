@@ -19,11 +19,14 @@ class Brain
 {
 
 public:
-	std::string adr;
 	Brain(void);
 	~Brain(void);
 
 	std::string	identify(void);
+
+private:
+	std::string _adr;
+
 };
 
 #endif

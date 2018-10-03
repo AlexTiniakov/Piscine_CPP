@@ -13,14 +13,14 @@
 #include "Pony.hpp"
 #include <iostream>
 
-Pony::Pony(std::string name): name(name)
+Pony::Pony(std::string name): _name(name)
 {
-    std::cout << this->name << " pony was born!" << std::endl;
+    std::cout << this->_name << " pony was born!" << std::endl;
 }
 
 Pony::~Pony()
 {
-    std::cout << this->name << " pony was died!" << std::endl;
+    std::cout << this->_name << " pony was died!" << std::endl;
 }
 
 Pony::Pony(void)

@@ -1,36 +1,36 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   Zombie.hpp                                         :+:      :+:    :+:   //
+//   Weapon.cpp                                         :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: otiniako <otiniako@student.unit.ua>        +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2018/10/02 18:16:36 by otiniako          #+#    #+#             //
-//   Updated: 2018/10/02 18:16:36 by otiniako         ###   ########.fr       //
+//   Created: 2018/10/02 23:20:55 by otiniako          #+#    #+#             //
+//   Updated: 2018/10/02 23:20:55 by otiniako         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
-# include <string>
+#include "Weapon.hpp"
 
-class Zombie
+Weapon::Weapon(std::string type)
 {
+	this->setType(type);
+}
 
-public:
-	Zombie(void);
-	~Zombie(void);
+Weapon::~Weapon()
+{
+	;
+}
 
-	void		announce(void);
-	void		set_type(std::string type);
-	void		set_name(std::string name);
+std::string	const & Weapon::getType(void) const
+{
+	return (this->_type);
+}
 
-private:
-	std::string	_name;
-	std::string	_type;
+void		Weapon::setType(std::string type)
+{
+	this->_type = type;
+}
 
-};
-
-
-
-#endif
+Weapon::Weapon(void): _type("NONE")
+{}

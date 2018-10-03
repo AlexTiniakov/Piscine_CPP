@@ -1,36 +1,35 @@
 // ************************************************************************** //
 //                                                                            //
 //                                                        :::      ::::::::   //
-//   Zombie.hpp                                         :+:      :+:    :+:   //
+//   Human.hpp                                          :+:      :+:    :+:   //
 //                                                    +:+ +:+         +:+     //
 //   By: otiniako <otiniako@student.unit.ua>        +#+  +:+       +#+        //
 //                                                +#+#+#+#+#+   +#+           //
-//   Created: 2018/10/02 18:16:36 by otiniako          #+#    #+#             //
-//   Updated: 2018/10/02 18:16:36 by otiniako         ###   ########.fr       //
+//   Created: 2018/10/03 17:01:24 by otiniako          #+#    #+#             //
+//   Updated: 2018/10/03 17:01:25 by otiniako         ###   ########.fr       //
 //                                                                            //
 // ************************************************************************** //
 
-#ifndef ZOMBIE_HPP
-# define ZOMBIE_HPP
+#ifndef HUMAN_HPP
+# define HUMAN_HPP
 # include <string>
 
-class Zombie
-{
-
-public:
-	Zombie(void);
-	~Zombie(void);
-
-	void		announce(void);
-	void		set_type(std::string type);
-	void		set_name(std::string name);
+class Human {
 
 private:
-	std::string	_name;
-	std::string	_type;
+	void meleeAttack(std::string const & target);
+	void rangedAttack(std::string const & target);
+	void intimidatingShout(std::string const & target);
+
+public:
+	void action(std::string const & action_name, std::string const & target);
 
 };
 
-
+struct t_war
+{
+	std::string action_name;
+	void		(Human::*func)(std::string const &);
+};
 
 #endif
