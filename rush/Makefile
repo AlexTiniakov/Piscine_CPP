@@ -26,9 +26,10 @@ SRC = main.cpp \
 OBJ = $(SRC:.cpp=.o)
 
 all: $(NAME)
-	@echo "\033[1;92mft_retro is created!\033[1;92m"
+	
 $(NAME): $(OBJ)
 	@$(CPP) $(FLAGS) -o $(NAME) $(OBJ) -lncurses
+	@echo "\033[1;92mft_retro is created!\033[1;92m"
 
 $(OBJ): %.o: %.cpp
 	@$(CPP) $(FLAGS) -o $@ -c $<
