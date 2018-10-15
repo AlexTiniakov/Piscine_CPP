@@ -14,7 +14,7 @@
 
 int main()
 {
-    //std::srand(time(0));
+    std::srand(time(0));
     Game game;
 
     game.Loop();
